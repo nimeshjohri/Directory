@@ -1,0 +1,21 @@
+.container
+{	
+	float:left;
+	width:450px;
+	height:799px;
+	border-right:2px solid grey;
+}
+.storeddata
+{
+	position:absolute;
+	margin-left:480px;
+	margin-top:20px;
+}
+.space
+{
+	padding:30px;
+}
+.space1
+{
+	padding-left:30px;
+}

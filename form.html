@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html ng-app="form">
+<title>Angular Directory</title>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="bootstrap.css">
+    <link rel="stylesheet" href="formstyle.css">
+    <link rel="stylesheet" href="C:\Users\Administrator\Desktop\Directory\fontawesome\css\font-awesome.min.css">
+    <script src="angular.js"></script>
+    <script src="jquery.js"></script>
+    <script src="bootstrap.min.js"></script>
+    <script src="code.js"></script>
+  </head>
+  <body>
+  	<div ng-controller="control">
+    <div class="container">
+      <h2>Directory</h2>
+      <form role="form">
+       <div class="form-group">
+          <input type="name" class="form-control" id="name" placeholder="Enter Name" ng-model="fullname">
+        </div>
+        <div class="form-group">
+          <input type="email" class="form-control" id="email" placeholder="Enter Email" ng-model="emailadd">
+        </div>
+        <div class="form-group">
+          <input type="number" class="form-control" id="number" placeholder="Enter Phone Number" ng-model="phonenumber">
+        </div>
+           <div class="form-group">
+          <textarea class="form-control" id="address" placeholder="Enter Address" ng-model="fulladdress"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary" ng-click="save()">Submit</button>
+      </form>
+         </div>
+      <div class="storeddata">
+      <table class="table table-hover table-bordered">
+  		<thead ng-show="show=true;edit=true">
+  			<tr>
+    			<th class="space">Name</th>
+    			<th class="space">Email</th>
+    			<th class="space">Phone</th>
+    			<th class="space">Address</th>
+    			<th colspan="2">Options</th>
+  			</tr>
+  		</thead>
+  		<tbody ng-repeat="information in database" ng-show="show">
+ 			<tr ng-show="edit">
+    			<td class="space1">{{information.name}}</td>
+    			<td class="space1">{{information.email}}</td>
+    			<td class="space1">{{information.number}}</td>
+    			<td class="space1">{{information.address}}</td>
+          <td colspan="2"><a ng-click="edit=false"><i title="Edit" class="fa fa-pencil-square-o"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="show=false"><i title="Delete" class="fa fa-times"></i></a></td>
+  			 </tr>
+          <tr ng-hide="edit">
+          <td class="space1"><input type="text" ng-model="information.name"></td>
+          <td class="space1"><input type="text" ng-model="information.email"></td>
+          <td class="space1"><input type="text" ng-model="information.number"></td>
+          <td class="space1"><input type="text" ng-model="information.address"></td>
+          <td colspan="2"><a ng-click="edit=true"><i title="Save" class="fa fa-floppy-o"></i></a>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a ng-click="edit=true"><i title="Cancel" class="fa fa-times"></i></a></td>
+        </tr>
+  		</tbody>
+	  </table>
+	</div>
+	</div>
+  </body>
+</html>
